@@ -11,12 +11,19 @@
   width: 200px;
   height: 200px;
   .form-group {
-    display: flex;
-    input {
+    @include display-flex();
+    padding-left: 15px;
+    padding-right: 15px;
+    .col {
       width: 50%;
-      padding: 20px;
-      font: {
-        size: 20px;
+      padding: 5px;
+      input[type="text"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font: {
+          size: 16px;
+        }
       }
     }
   }
