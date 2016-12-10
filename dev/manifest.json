@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Time Difference",
+  "version": "0.0.1",
+
+  "background": {
+    "scripts": ["js/script.js"]
+  },
+
+  "browser_action": {
+    "default_title": "Time Difference",
+    "default_popup": "popup.html"
+  }
+
+}
