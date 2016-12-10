@@ -1,0 +1,23 @@
+@import "compass";
+@import "compass/reset";
+
+@include global-reset();
+
+* {
+  @include box-sizing(border-box);
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  .form-group {
+    display: flex;
+    input {
+      width: 50%;
+      padding: 20px;
+      font: {
+        size: 20px;
+      }
+    }
+  }
+}
