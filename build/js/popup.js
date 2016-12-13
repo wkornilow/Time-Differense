@@ -1,3 +1,14 @@
+function validate(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode(key);
+    var regex = /[0-9]|\./;
+    if (!regex.test(key)) {
+        theEvent.returnValue = false;
+        if (theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
+
 window.onload = function () {
     var firstHour,
         firstMinute,
@@ -14,6 +25,23 @@ window.onload = function () {
     submit = document.getElementById('submit');
     result = document.getElementById('result');
     copied = document.getElementById('copied');
+
+    firstHour.onkeyup = function () {
+        if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+            firstMinute.focus();
+        }
+    };
+
+    firstMinute.onkeyup = function () {
+        if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+            secondHour.focus();
+        }
+    };
+    secondHour.onkeyup = function () {
+        if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+            secondMinute.focus();
+        }
+    };
 
 
     submit.addEventListener('click', function () {
