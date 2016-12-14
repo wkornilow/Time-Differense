@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Lost Time</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/popup.js"></script>
+    <link rel="stylesheet" href="css/prod.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <div class="form-group">
-        <div class="col">
-            <input type="text" onkeypress='validate(event)' tabindex="1" id="1" maxlength="2" placeholder="09" value="">
+<div class="ext-container">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="first_hour" type="text" maxlength="2">
+            <label for="first_hour">First Hour</label>
         </div>
-        <div class="col">
-            <input type="text" onkeypress='validate(event)' tabindex="2" id="2" maxlength="2" placeholder="00" value="">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col">
-            <input type="text" onkeypress='validate(event)' tabindex="3" id="3" maxlength="2" placeholder="08" value="">
-        </div>
-        <div class="col">
-            <input type="text" onkeypress='validate(event)' tabindex="4" id="4" maxlength="2" placeholder="00" value="">
+        <div class="input-field col s6">
+            <input id="first_minute" type="text" maxlength="2">
+            <label for="first_minute">First Minute</label>
         </div>
     </div>
-
-    <div class="form-group">
-        <div class="col">
-            <input id="submit" type="submit" value="Calc">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="second_hour" type="text" maxlength="2">
+            <label for="second_hour">Second Hour</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="second_minute" type="text" maxlength="2">
+            <label for="second_minute">Second Minute</label>
         </div>
     </div>
-
-    <div class="form-group">
-        <div class="col">
+    <div class="row">
+        <div class="input-field col s6">
+            <a href="#" id="submit" class="waves-effect waves-light btn">Calc & Copy</a>
+        </div>
+        <div class="input-field col s6">
             <input type="text" id="result">
         </div>
-        <div class="col">
-            <input type="text" id="copied" value="" disabled>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <i class="large material-icons result-hidden">done</i>
         </div>
     </div>
-</div>
+
+<script src="js/prod.min.js"></script>
 </body>
 </html>

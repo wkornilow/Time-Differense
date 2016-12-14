@@ -1,8 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Lost Time",
-  "version": "0.0.3",
-
+  "version": "0.0.4",
   "icons": {
     "16": "img/16x16.png",
     "32": "img/32x32.png",
@@ -11,12 +10,15 @@
   },
   "background": {
     "scripts": [
-      "js/popup.js"
+      "js/prod.min.js"
     ]
   },
   "browser_action": {
     "default_title": "Lost Time",
     "default_icon": "img/48x48.png",
     "default_popup": "popup.html"
-  }
+  },
+  "permissions": [
+    "background"
+  ]
 }

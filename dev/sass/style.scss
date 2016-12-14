@@ -1,30 +1,14 @@
 @import "compass";
-@import "compass/reset";
 
-@include global-reset();
-
-* {
-  @include box-sizing(border-box);
-}
-
-.container {
-  width: 200px;
-  height: 200px;
-  .form-group {
-    @include display-flex();
-    padding-left: 15px;
-    padding-right: 15px;
-    .col {
-      width: 50%;
-      padding: 5px;
-      input[type="text"],
-      input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        font: {
-          size: 16px;
-        }
-      }
-    }
+.ext-container {
+  width: 300px;
+  position: relative;
+  .result-hidden {
+    @include transform(translate(-50%, -50%));
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 }
