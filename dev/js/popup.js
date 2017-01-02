@@ -7,21 +7,24 @@ $(document).ready(function () {
         result = $('#result'),
         successConfirm = $('.result-hidden');
 
+    $('#timer').keypress(function (e) {
+        if (e.which == 13) {
+            console.log(true);
+            var firstTime = (+firstHour.val() * 60) + +firstMinute.val();
+            var secondTime = (+secondHour.val() * 60) + +secondMinute.val();
+            result.val(+firstTime - +secondTime);
 
-    submit.on('click', function () {
-        var firstTime = (+firstHour.val() * 60) + +firstMinute.val();
-        var secondTime = (+secondHour.val() * 60) + +secondMinute.val();
-        result.val(+firstTime - +secondTime);
+            result.select();
 
-        result.select();
-
-        try {
-            var successful = document.execCommand('copy');
-            var msg = successful ? 'successful' : 'unsuccessful';
-            successConfirm.fadeIn().delay(400).fadeOut();
-            console.log('Copying text command was ' + msg);
-        } catch (err) {
-            console.log('Oops, unable to copy');
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                successConfirm.fadeIn().delay(400).fadeOut();
+                console.log('Copying text command was ' + msg);
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+            e.preventDefault();
         }
-    })
+    });
 });

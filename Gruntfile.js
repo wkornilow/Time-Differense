@@ -36,6 +36,25 @@ module.exports = function (grunt) {
                     'build/css/prod.min.css': ['dev/css/prebuilt/prod.css']
                 }
             }
+        },
+        copy: {
+            manifest: {
+                expand: false,
+                src: 'dev/manifest.json',
+                dest: 'build/manifest.json'
+            },
+            popup: {
+                expand: false,
+                src: 'dev/popup.html',
+                dest: 'build/popup.html'
+            },
+            img: {
+                expand: true,
+                cwd: 'dev/img',
+                src: '**',
+                dest: 'build/img'
+            }
+
         }
 
     });
@@ -43,7 +62,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
-
+    grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'copy']);
 };

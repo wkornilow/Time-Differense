@@ -8,39 +8,43 @@
 </head>
 <body>
 <div class="ext-container">
-    <div class="row">
-        <div class="input-field col s6">
-            <input id="first_hour" type="text" maxlength="2">
-            <label for="first_hour">First Hour</label>
+    <form id="timer" action="">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_hour" type="text" maxlength="2" tabindex="1">
+                <label for="first_hour">First Hour</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="first_minute" type="text" maxlength="2" tabindex="2">
+                <label for="first_minute">First Minute</label>
+            </div>
         </div>
-        <div class="input-field col s6">
-            <input id="first_minute" type="text" maxlength="2">
-            <label for="first_minute">First Minute</label>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="second_hour" type="text" maxlength="2" tabindex="3">
+                <label for="second_hour">Second Hour</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="second_minute" type="text" maxlength="2" tabindex="4">
+                <label for="second_minute">Second Minute</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <input id="second_hour" type="text" maxlength="2">
-            <label for="second_hour">Second Hour</label>
+        <div class="row">
+            <div class="input-field col s6 center padding-10">
+                <!--<a href="#" id="submit" class="waves-effect waves-light btn" tabindex="5">Calc & Copy</a>-->
+                <span class="hint">Hint: Press Enter!</span>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="result">
+            </div>
         </div>
-        <div class="input-field col s6">
-            <input id="second_minute" type="text" maxlength="2">
-            <label for="second_minute">Second Minute</label>
+        <div class="row">
+            <div class="col s12">
+                <i class="large material-icons result-hidden">done</i>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <a href="#" id="submit" class="waves-effect waves-light btn">Calc & Copy</a>
-        </div>
-        <div class="input-field col s6">
-            <input type="text" id="result">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <i class="large material-icons result-hidden">done</i>
-        </div>
-    </div>
+    </form>
+</div>
 
 <script src="js/prod.min.js"></script>
 </body>
